@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>King's Kitchen & Catering Services - Mararaba, Abuja</title>
+<meta name="description" content="King's Kitchen & Catering Services - Exceptional catering services and professional culinary training in Mararaba, Abuja.">
+<style>
+  :root {
+    --deep-green: #0F4C3A;
+    --warm-gold: #D4A017;
+    --light-green: #1a6b52;
+    --text-dark: #1f2937;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --green-500: #10b981;
+    --green-800: #065f46;
+    --red-100: #fee2e2;
+    --red-600: #dc2626;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--gray-50);
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .bg-deep-green { background-color: var(--deep-green); }
+  .bg-warm-gold { background-color: var(--warm-gold); }
+  .text-deep-green { color: var(--deep-green); }
+  .text-warm-gold { color: var(--warm-gold); }
+  .text-white { color: white; }
+  .text-gray-200 { color: var(--gray-200); }
+  .text-gray-300 { color: var(--gray-300); }
+  .text-gray-400 { color: #9ca3af; }
+  .text-gray-600 { color: var(--gray-600); }
+  .text-gray-700 { color: var(--gray-700); }
+  .bg-white { background-color: white; }
+  .bg-gray-50 { background-color: var(--gray-50); }
+  
+  .btn-primary {
+    background-color: var(--warm-gold);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #b88914;
+    transform: translateY(-2px);
+  }
+  
+  .btn-secondary {
+    background-color: white;
+    color: var(--deep-green);
+    border: 2px solid var(--deep-green);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--deep-green);
+    color: white;
+  }
+  
+  header {
+    background-color: var(--deep-green);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+  }
+  
+  .logo-section {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .logo-text h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 700;
+  }
+  
+  .logo-text p {
+    font-size: 0.75rem;
+    margin: 0;
+    opacity: 0.9;
+  }
+  
+  nav {
+    display: none;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: var(--warm-gold);
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  
+  .mobile-menu.open {
+    max-height: 500px;
+  }
+  
+  .mobile-menu a {
+    display: block;
+    padding: 0.75rem 0;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .hero {
+    background: linear-gradient(135deg, rgba(15, 76, 58, 0.92) 0%, rgba(26, 107, 82, 0.92) 100%), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path d="M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+    background-size: cover, 100% 200px;
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+    position: relative;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .section {
+    padding: 4rem 0;
+  }
+  
+  .section-heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--deep-green);
+    margin-bottom: 1rem;
+  }
+  
+  .section-heading:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--warm-gold);
+    margin: 12px auto 0;
+  }
+  
+  .grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  
+  .grid-1 { grid-template-columns: 1fr; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: 1fr; }
+  
+  .card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border-left: 4px solid var(--warm-gold);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+  
+  label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    margin-bottom: 0.5rem;
+  }
+  
+  input, select, textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+  }
+  
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--warm-gold);
+    box-shadow: 0 0 0 2px rgba(212, 160, 23, 0.2);
+  }
+  
+  .icon-box {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--warm-gold);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.5rem;
+  }
+  
+  .icon-circle {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #f0fdf4;
+  }
+  
+  .gallery-img {
+    width: 100%;
+    height: 16rem;
+    border-radius: 0.75rem;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .gallery-card:hover .gallery-img {
+    transform: scale(1.05);
+  }
+  
+  .gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(15, 76, 58, 0.95) 0%, transparent 100%);
+    color: white;
+    padding: 1.5rem 1rem 1rem;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .items-center {
+    align-items: center;
+  }
+  
+  .items-start {
+    align-items: flex-start;
+  }
+  
+  .justify-between {
+    justify-content: space-between;
+  }
+  
+  .justify-center {
+    justify-content: center;
+  }
+  
+  .gap-2 { gap: 0.5rem; }
+  .gap-3 { gap: 0.75rem; }
+  .gap-4 { gap: 1rem; }
+  .gap-6 { gap: 1.5rem; }
+  .gap-8 { gap: 2rem; }
+  
+  .mb-2 { margin-bottom: 0.5rem; }
+  .mb-3 { margin-bottom: 0.75rem; }
+  .mb-4 { margin-bottom: 1rem; }
+  .mb-6 { margin-bottom: 1.5rem; }
+  .mb-8 { margin-bottom: 2rem; }
+  .mb-10 { margin-bottom: 2.5rem; }
+  .mb-12 { margin-bottom: 3rem; }
+  .mt-4 { margin-top: 1rem; }
+  .mt-6 { margin-top: 1.5rem; }
+  .mt-8 { margin-top: 2rem; }
+  
+  .p-4 { padding: 1rem; }
+  .p-6 { padding: 1.5rem; }
+  .p-8 { padding: 2rem; }
+  .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+  .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+  .px-4 { padding-left: 1rem; padding-right: 1rem; }
+  .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .px-8 { padding-left: 2rem; padding-right: 2rem; }
+  
+  .text-xs { font-size: 0.75rem; }
+  .text-sm { font-size: 0.875rem; }
+  .text-base { font-size: 1rem; }
+  .text-lg { font-size: 1.125rem; }
+  .text-xl { font-size: 1.25rem; }
+  .text-2xl { font-size: 1.5rem; }
+  .text-3xl { font-size: 1.875rem; }
+  .text-4xl { font-size: 2.25rem; }
+  .text-5xl { font-size: 3rem; }
+  
+  .font-bold { font-weight: 700; }
+  .font-semibold { font-weight: 600; }
+  .font-medium { font-weight: 500; }
+  .font-light { font-weight: 300; }
+  
+  .text-center { text-align: center; }
+  
+  .rounded-lg { border-radius: 0.5rem; }
+  .rounded-xl { border-radius: 0.75rem; }
+  .rounded-2xl { border-radius: 1rem; }
+  .rounded-full { border-radius: 9999px; }
+  
+  .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05); }
+  .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+  
+  .border-2 { border-width: 2px; border-style: solid; }
+  .border-warm-gold { border-color: var(--warm-gold); }
+  
+  .bg-green-50 { background-color: #f0fdf4; }
+  .bg-red-50 { background-color: #fef2f2; }
+  
+  .feature-list {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .feature-dot {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--warm-gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+  }
+  
+  footer {
+    background-color: var(--deep-green);
+    color: white;
+    padding: 3rem 0 1rem;
+  }
+  
+  .footer-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-link:hover {
+    color: var(--warm-gold);
+  }
+  
+  .back-to-top {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background-color: var(--warm-gold);
+    color: white;
+    padding: 0.75rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 40;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.25rem;
+  }
+  
+  .back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .back-to-top:hover {
+    background-color: #b88914;
+  }
+  
+  .alert {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    display: none;
+  }
+  
+  .alert.success {
+    background-color: #f0fdf4;
+    border: 1px solid #86efac;
+    color: #166534;
+    display: block;
+  }
+  
+  .alert.error {
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+    display: block;
+  }
+  
+  @media (min-width: 640px) {
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .hero-buttons {
+      flex-direction: row;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    nav { display: flex; gap: 2rem; }
+    .mobile-menu-btn { display: none; }
+    .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .hero h2 { font-size: 3.5rem; }
+  }
+  
+  @media (min-width: 1024px) {
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo-section">
+          <div class="logo-text">
+            <h1>King's Kitchen</h1>
+            <p>& Catering Services</p>
+          </div>
+        </div>
+        <nav>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#gallery" class="nav-link">Gallery</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+      </div>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#services" onclick="closeMobileMenu()">Services</a>
+        <a href="#about" onclick="closeMobileMenu()">About</a>
+        <a href="#gallery" onclick="closeMobileMenu()">Gallery</a>
+        <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h2>Welcome to King's Kitchen</h2>
+        <p>Professional Catering & Culinary Excellence in Mararaba, Abuja</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn-primary">Book Our Services</a>
+          <a href="#services" class="btn-secondary">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section bg-white">
+    <div class="container">
+      <h2 class="section-heading">Our Services</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="icon-box">🍽️</div>
+          <h3 class="mb-3 text-xl font-semibold">Corporate Catering</h3>
+          <p class="text-gray-600">Impress your colleagues with premium catering for meetings, conferences, and corporate events.</p>
+        </div>
+        <div class="card">
+          <div class="icon-box">🎉</div>
+          <h3 class="mb-3 text-xl font-semibold">Event Catering</h3>
+          <p class="text-gray-600">Celebrate your special moments with our world-class catering for weddings, birthdays, and celebrations.</p>
+        </div>
+        <div class="card">
+          <div class="icon-box">👨‍🍳</div>
+          <h3 class="mb-3 text-xl font-semibold">Culinary Training</h3>
+          <p class="text-gray-600">Learn professional cooking techniques from our expert chefs. Classes available for beginners to advanced.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section bg-gray-50">
+    <div class="container">
+      <h2 class="section-heading">Why Choose Us</h2>
+      <div class="grid grid-2" style="margin-top: 3rem;">
+        <div>
+          <h3 class="text-2xl font-bold mb-4 text-deep-green">Excellence in Every Dish</h3>
+          <div class="feature-list">
+            <div class="feature-dot"></div>
+            <div>
+              <h4 class="font-semibold mb-1">Expert Chefs</h4>
+              <p class="text-gray-600 text-sm">Our team of certified professional chefs brings years of experience</p>
+            </div>
+          </div>
+          <div class="feature-list">
+            <div class="feature-dot"></div>
+            <div>
+              <h4 class="font-semibold mb-1">Fresh Ingredients</h4>
+              <p class="text-gray-600 text-sm">We source only the finest locally-sourced and international ingredients</p>
+            </div>
+          </div>
+          <div class="feature-list">
+            <div class="feature-dot"></div>
+            <div>
+              <h4 class="font-semibold mb-1">Customized Menus</h4>
+              <p class="text-gray-600 text-sm">Every menu is tailored to your preferences and dietary requirements</p>
+            </div>
+          </div>
+          <div class="feature-list">
+            <div class="feature-dot"></div>
+            <div>
+              <h4 class="font-semibold mb-1">On-Time Delivery</h4>
+              <p class="text-gray-600 text-sm">We guarantee punctual and professional service every single time</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+          <div style="background: linear-gradient(135deg, var(--deep-green) 0%, var(--light-green) 100%); color: white; padding: 2rem; border-radius: 0.75rem; text-align: center;">
+            <div style="font-size: 3rem; font-weight: bold; margin-bottom: 0.5rem;">15+</div>
+            <p class="mb-4">Years of Excellence</p>
+            <hr style="opacity: 0.3; margin-bottom: 1rem;">
+            <p class="text-sm">Trusted by hundreds of satisfied customers across Abuja and beyond</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section bg-white">
+    <div class="container">
+      <h2 class="section-heading">Our Work</h2>
+      <div class="grid grid-3" style="margin-top: 3rem;">
+        <div class="gallery-card">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%230F4C3A' width='400' height='300'/%3E%3Ctext x='200' y='150' text-anchor='middle' dy='.3em' fill='white' font-size='24' font-family='Arial'%3ECorporate Event%3C/text%3E%3C/svg%3E" alt="Corporate Event" class="gallery-img">
+          <div class="gallery-overlay">
+            <h3 class="font-semibold">Corporate Lunch</h3>
+          </div>
+        </div>
+        <div class="gallery-card">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23D4A017' width='400' height='300'/%3E%3Ctext x='200' y='150' text-anchor='middle' dy='.3em' fill='white' font-size='24' font-family='Arial'%3EWedding Reception%3C/text%3E%3C/svg%3E" alt="Wedding Reception" class="gallery-img">
+          <div class="gallery-overlay">
+            <h3 class="font-semibold">Wedding Reception</h3>
+          </div>
+        </div>
+        <div class="gallery-card">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%231a6b52' width='400' height='300'/%3E%3Ctext x='200' y='150' text-anchor='middle' dy='.3em' fill='white' font-size='24' font-family='Arial'%3ECulinary Class%3C/text%3E%3C/svg%3E" alt="Culinary Class" class="gallery-img">
+          <div class="gallery-overlay">
+            <h3 class="font-semibold">Culinary Training</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section bg-gray-50">
+    <div class="container">
+      <h2 class="section-heading">Get In Touch</h2>
+      <div class="grid grid-2" style="margin-top: 3rem; max-width: 900px; margin-left: auto; margin-right: auto;">
+        <div>
+          <h3 class="text-xl font-semibold mb-6 text-deep-green">Contact Information</h3>
+          <div class="mb-6">
+            <h4 class="font-semibold text-deep-green mb-2">📍 Location</h4>
+            <p class="text-gray-600">Mararaba, Abuja<br>Nigeria</p>
+          </div>
+          <div class="mb-6">
+            <h4 class="font-semibold text-deep-green mb-2">📞 Phone</h4>
+            <p class="text-gray-600"><a href="tel:+234" class="footer-link">+234 (0) XXX XXXX XXX</a></p>
+          </div>
+          <div class="mb-6">
+            <h4 class="font-semibold text-deep-green mb-2">📧 Email</h4>
+            <p class="text-gray-600"><a href="mailto:info@kingskitchen.com" class="footer-link">info@kingskitchen.com</a></p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-deep-green mb-2">🕐 Business Hours</h4>
+            <p class="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 5:00 PM<br>Sunday: Closed</p>
+          </div>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+          <div id="contactAlert" class="alert"></div>
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+              <label for="service">Service Required</label>
+              <select id="service" name="service" required>
+                <option value="">Select a service</option>
+                <option value="corporate">Corporate Catering</option>
+                <option value="event">Event Catering</option>
+                <option value="training">Culinary Training</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width: 100%; text-align: center;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="grid grid-3" style="margin-bottom: 2rem;">
+        <div>
+          <h4 class="font-semibold mb-4">King's Kitchen</h4>
+          <p class="text-gray-300 text-sm">Exceptional catering services and professional culinary training in Mararaba, Abuja.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <ul style="list-style: none;">
+            <li class="mb-2"><a href="#services" class="footer-link">Services</a></li>
+            <li class="mb-2"><a href="#about" class="footer-link">About</a></li>
+            <li class="mb-2"><a href="#gallery" class="footer-link">Gallery</a></li>
+            <li class="mb-2"><a href="#contact" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Follow Us</h4>
+          <ul style="list-style: none;">
+            <li class="mb-2"><a href="#" class="footer-link">Facebook</a></li>
+            <li class="mb-2"><a href="#" class="footer-link">Instagram</a></li>
+            <li class="mb-2"><a href="#" class="footer-link">Twitter</a></li>
+            <li class="mb-2"><a href="#" class="footer-link">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; color: var(--gray-300);">
+        <p>&copy; 2024 King's Kitchen & Catering Services. All rights reserved. | <a href="#" class="footer-link">Privacy Policy</a> | <a href="#" class="footer-link">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
+
+  <script>
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('open');
+    }
+
+    function closeMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.remove('open');
+    }
+
+    // Back to top button
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    // Contact form handling
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const alert = document.getElementById('contactAlert');
+      
+      // Simulate form submission
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        service: document.getElementById('service').value,
+        message: document.getElementById('message').value
+      };
+      
+      // Show success message
+      alert.textContent = 'Thank you! Your message has been sent successfully. We will contact you soon.';
+      alert.classList.add('success');
+      
+      // Reset form
+      contactForm.reset();
+      
+      // Hide alert after 5 seconds
+      setTimeout(() => {
+        alert.classList.remove('success');
+      }, 5000);
+    });
+  </script>
+</body>
+</html>
